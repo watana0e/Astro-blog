@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigathion.astro"
 
 //microCMS呼び出し
 import { getBlogs } from "../libs/microcms";
@@ -9,6 +10,7 @@ const response = await getBlogs({ fields: ["id", "title"] });
 <Layout title="Index - ワタナベックスの自習室">
   <main>
     <h1>ワタナベックスの自習室</h1>
+    <Navigation />
     <ul>
       {
         response.contents.map((content: any) => (
