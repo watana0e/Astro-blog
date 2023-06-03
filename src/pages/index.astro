@@ -6,8 +6,9 @@ import { getBlogs } from "../libs/microcms";
 const response = await getBlogs({ fields: ["id", "title"] });
 ---
 
-<Layout title="My first blog with Astro">
+<Layout title="Index - ワタナベックスの自習室">
   <main>
+    <h1>ワタナベックスの自習室</h1>
     <ul>
       {
         response.contents.map((content: any) => (
