@@ -5,12 +5,17 @@ import Navigation from "../components/Navigathion.astro"
 //microCMS呼び出し
 import { getBlogs } from "../libs/microcms";
 const response = await getBlogs({ fields: ["id", "title"] });
+
+//Markdown呼び出し
+const allPosts = await Astro.glob('../pages/posts/*.md')
+
 ---
 
 <Layout title="Index - ワタナベックスの自習室">
   <main>
     <h1>ワタナベックスの自習室</h1>
     <Navigation />
+    <h2>MicroCMSから投稿</h2>
     <ul>
       {
         response.contents.map((content: any) => (
@@ -20,6 +25,14 @@ const response = await getBlogs({ fields: ["id", "title"] });
         ))
       }
     </ul>
+
+   <hr>
+   
+    <h2 id="markdown">Markdownファイルで投稿</h2>
+    <ul>
+      {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+    </ul>
+
   </main>
 </Layout>
 
@@ -28,5 +41,17 @@ const response = await getBlogs({ fields: ["id", "title"] });
     margin: auto;
     padding: 1em;
     max-width: 60ch;
+  }
+  
+  h2 {
+    color: white;
+  }
+  ul {
+    background-color: wheat;
+  }
+
+  #markdown {
+    color: rgb(7, 245, 39);
+    background-color: black;
   }
 </style>

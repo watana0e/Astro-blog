@@ -1,0 +1,39 @@
+---
+import Layout from "./Layout.astro"
+import Navigation from "../components/Navigathion.astro"
+
+const { frontmatter } =Astro.props
+---
+
+<Layout pageTitle={frontmatter.title}>
+  <main>
+    <h1>ワタナベックスの自習室</h1>
+    <Navigation />
+    <h1 id="pagetitle">{frontmatter.title}</h1>
+    <p id="date">{frontmatter.pubDate.slice(0,10)}</p>
+    <hr>
+    <slot />
+  </main>
+</layout>
+
+<style>
+    body{
+        background-color: rgb(50, 4, 4);
+    }
+    
+    main {
+      margin-left: 20ch;
+      padding: 1em;
+      max-width: 60ch;
+    }
+
+    * {
+        color: aqua;
+    }
+    #pagetitle {
+        color: #da6262;
+    }
+    #date {
+        color: #7bfd8a;
+    }
+  </style>
