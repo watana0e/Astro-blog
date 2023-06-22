@@ -1,5 +1,5 @@
 {
-  "name": "astro-blog",
+  "name": "astro-demo",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.5.6",
-    "microcms-js-sdk": "^2.5.0"
+    "astro": "^2.6.4"
   }
 }

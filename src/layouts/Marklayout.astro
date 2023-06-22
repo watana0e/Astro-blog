@@ -1,0 +1,74 @@
+---
+import Layout from './Layout.astro';
+import Navi from '../components/Navi.astro'; 
+
+const { frontmatter } = Astro.props
+---
+<Layout title={frontmatter.title}>
+	<main>
+		<div id="marktitle">
+			<h1 id="pagetitle">{frontmatter.title}</h1>
+			<div id="date">
+				<p id="pubDate">作成日: {frontmatter.pubDate.slice(0,10)}</p>
+				<p id="upDate">更新: {frontmatter.upDate}</p>
+			</div>
+		</div>
+			<p>タグ： {frontmatter.tag}</p>
+    	<slot />
+	</main>
+</Layout>
+
+</html>
+
+<style>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background-color: #F6F6F6;
+	}
+	main {
+		margin-left: 5%;
+		margin-right: auto;
+		padding-bottom: 50px;
+	}
+	#pagetitle {
+		margin-bottom: 0px;
+		background-color: orangered;
+		-webkit-text-stroke: 0.5mm black;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+	}
+	#date {
+		display: inline-flex;
+		font-size: 25px;
+		background-color: orangered;
+		-webkit-text-stroke: 0.26mm black;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+		font-weight: bold;
+	}
+	#pubDate {
+		margin-right: 20px;
+		border-left: 3px solid orangered;
+		border-right: 3px solid orangered;
+		padding: 0px 10px 0px 10px;
+	}
+	#upDate {
+		margin-right: 20px;
+		border-left: 3px solid orangered;
+		border-right: 3px solid orangered;
+		padding: 0px 10px 0px 10px;
+	}
+	#markconts {
+		background-color: aqua;
+		color: black;
+	}
+	.markconts {
+		background-color: black;
+		color: rgb(242, 242, 242);
+	}
+
+</style>

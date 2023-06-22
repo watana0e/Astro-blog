@@ -1,9 +1,11 @@
 ---
+import Navi from '../components/Navi.astro'; 
+import Footer from '../components/Footer.astro';
 export interface Props {
 	title: string;
 }
-import Navigation from '../components/Navigathion.astro'
-const { pageTitle } = Astro.props;
+
+const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -14,12 +16,19 @@ const { pageTitle } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<div id="Sitetitle">
+			<h1 class="title">ワタナベックスの自習室</h1>
+		</div>
+		<Navi />
+		<div id="contens">
+			<slot />
+		</div>
 	</body>
-</html>
+	<Footer />
+	</html>
 <style is:global>
 	:root {
 		--accent: 124, 58, 237;
@@ -27,23 +36,47 @@ const { pageTitle } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background-color: #1f1e1e;
+		background-color: whitesmoke;
+		background-image: url(../public/images/sc1.png);
+		background-size: cover;
+		background-attachment: scroll;
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
-
-    h1 {
-        color: antiquewhite;
-    }
-
-    p {
-        color: #4ecc18;
-    }
-
-	h2 {
-		color: white;
+	body {
+		margin: 3%;
 	}
-
+	#Sitetitle {
+		background-color: rgba(0, 0, 0, 0.469);
+		padding: 3%;
+	}
+	.title {
+		font-size: 345%;
+		background: linear-gradient(15deg, black,rgb(93, 93, 93) 70%);
+        -webkit-text-stroke: 0.5mm orange;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 100%;
+		margin: 0%;
+	}
+	#contens {
+		background-color: rgba(0, 0, 0, 0.469);
+		color: white;
+		font-size: 25px;
+		padding: 1%;
+	}
+	#contens code {
+		display: inline-block;
+		padding: 0.1em 0.25em; /* 文字周りの余白 */
+  		border-radius: 3px; /* 角丸 */
+  		border: solid 1px #d6dde4; /* 枠線 */
+	}
+	a {
+		color: orange;
+	}
+	a:hover {
+		color: yellowgreen;
+	}
 </style>

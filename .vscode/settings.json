@@ -1,0 +1,8 @@
+{
+    // マークダウンに限定
+    "lpubsppop01.autoTimeStamp.filenamePattern": ".md",
+    // 'updated:' で始まる行
+    "lpubsppop01.autoTimeStamp.modifiedTimeStart": "^upDate:",
+    // 日付フォーマット
+    "lpubsppop01.autoTimeStamp.momentFormat": " YYYY-MM-DD HH:mm"
+  }
