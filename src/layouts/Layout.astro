@@ -35,9 +35,7 @@ const { title } = Astro.props;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background-color: whitesmoke;
-		background-image: url(../public/images/sc1.png);
+		background-color: rgba(0, 0, 128, 0.883);
 		background-size: cover;
 		background-attachment: scroll;
 	}
@@ -51,10 +49,11 @@ const { title } = Astro.props;
 	#Sitetitle {
 		background-color: rgba(0, 0, 0, 0.469);
 		padding: 3%;
+		border: 1px solid orange;
 	}
 	.title {
 		font-size: 345%;
-		background: linear-gradient(15deg, black,rgb(93, 93, 93) 70%);
+		background-color: crimson;
         -webkit-text-stroke: 0.5mm orange;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -66,6 +65,7 @@ const { title } = Astro.props;
 		color: white;
 		font-size: 25px;
 		padding: 1%;
+		border: 1px solid orange;
 	}
 	#contens code {
 		display: inline-block;

@@ -3,6 +3,12 @@ import Layout from "../layouts/Layout.astro";
 
 const posts = await Astro.glob('../pages/posts/*.md');
 const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
+
+const sortedPosts = nonDraftPosts.sort((a, b) => {
+  const aDate = new Date(a.frontmatter.pubDate);
+  const bDate = new Date(b.frontmatter.pubDate);
+  return bDate.getTime() - aDate.getTime();
+});
 ---
 
 <Layout title="index Astro">
