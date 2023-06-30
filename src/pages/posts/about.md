@@ -1,7 +1,9 @@
 ---
 layout: ../../layouts/Marklayout.astro
 title: '自己紹介'
-pubDate: 2023-06-30 22:07:19
+pubDate: 2023-06-21
+upDate: 2023-06-30_22:07:19
+draft: false
 
 ---
 <!-- コメントアウト -->
