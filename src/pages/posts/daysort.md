@@ -2,8 +2,10 @@
 
 layout: ../../layouts/Marklayout.astro
 title: '投稿を日付順にソート'
+slug: 01
+tag: ['設定']
 pubDate: 2023-06-24
-upDate:
+upDate: 2023-06-24_15:54:15
 draft: false
 
 ---
@@ -14,7 +16,7 @@ Astroでサイトを作ると Hugo の用に新しい順に並ばなかったの
 
 [Astroで最新記事から日付順に記事一覧を表示する方法/Zenn](https://zenn.dev/miz_dev/articles/astro-sorted-posts)
 
-以下のコードを '''index''' ページに追加したらソートして表示ができました。
+以下のコードを ```index``` ページに追加したらソートして表示ができました。
 
 ```javascript
 const sortedPosts = nonDraftPosts.sort((a, b) => {
@@ -23,4 +25,3 @@ const sortedPosts = nonDraftPosts.sort((a, b) => {
   return bDate - aDate;
 });
 ```
-aaa

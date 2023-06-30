@@ -10,7 +10,7 @@ const { frontmatter } = Astro.props
 			<h1 id="pagetitle">{frontmatter.title}</h1>
 			<div id="date">
 				<p id="pubDate">作成日: {frontmatter.pubDate.slice(0,10)}</p>
-				<p id="upDate">更新: {frontmatter.upDate}</p>
+				<p id="upDate">更新: {frontmatter.upDate.slice(0,16)}</p>
 			</div>
 		</div>
 			<p>タグ： {frontmatter.tag}</p>
@@ -35,7 +35,7 @@ const { frontmatter } = Astro.props
 	}
 	#pagetitle {
 		margin-bottom: 0px;
-		background-color: orangered;
+		background-color: white;
 		-webkit-text-stroke: 0.5mm black;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -43,22 +43,18 @@ const { frontmatter } = Astro.props
 	#date {
 		display: inline-flex;
 		font-size: 25px;
-		background-color: orangered;
-		-webkit-text-stroke: 0.26mm black;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-		font-weight: bold;
+		color: white;
 	}
 	#pubDate {
 		margin-right: 20px;
-		border-left: 3px solid orangered;
-		border-right: 3px solid orangered;
+		border-left: 3px solid white;
+		border-right: 3px solid white;
 		padding: 0px 10px 0px 10px;
 	}
 	#upDate {
 		margin-right: 20px;
-		border-left: 3px solid orangered;
-		border-right: 3px solid orangered;
+		border-left: 3px solid white;
+		border-right: 3px solid white;
 		padding: 0px 10px 0px 10px;
 	}
 	#markconts {
