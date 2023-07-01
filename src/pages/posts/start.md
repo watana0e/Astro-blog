@@ -3,7 +3,7 @@ layout: ../../layouts/Marklayout.astro
 title: '7月になったので本格的にスタート'
 pubDate: 2023-07-01
 upDate: 2023-07-01_13:57:03
-draft: true
+draft: false
 
 ---
 <!-- コメントアウト -->
