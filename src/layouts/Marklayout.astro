@@ -13,7 +13,7 @@ const { frontmatter } = Astro.props
 				<p id="upDate">更新: {frontmatter.upDate.slice(0,16)}</p>
 			</div>
 		</div>
-			<p>タグ： {frontmatter.tag}</p>
+			<p>タグ： {frontmatter.tags}</p>
     	<slot />
 	</main>
 </Layout>
@@ -21,17 +21,14 @@ const { frontmatter } = Astro.props
 </html>
 
 <style>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
 	html {
 		font-family: system-ui, sans-serif;
 	}
 	main {
-		margin-left: 5%;
-		margin-right: auto;
+		margin-left: 2vw;
+		margin-right: 2vw;
 		padding-bottom: 50px;
+		font-size: 3.14vw;
 	}
 	#pagetitle {
 		margin-bottom: 0px;

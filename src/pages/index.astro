@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const posts = await Astro.glob('../pages/posts/*.md');
-const nonDraftPosts = posts.filter((post) => !post.frontmatter.draft);
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
 
 const sortedPosts = nonDraftPosts.sort((a, b) => {
   const aDate = new Date(a.frontmatter.pubDate);

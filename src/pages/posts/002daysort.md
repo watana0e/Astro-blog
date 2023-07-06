@@ -2,7 +2,7 @@
 
 layout: ../../layouts/Marklayout.astro
 title: '投稿を日付順にソート'
-tag: ['設定']
+tags: ['設定']
 pubDate: 2023-06-24
 upDate: 2023-06-24_15:54:15
 draft: false
